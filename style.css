@@ -1,8 +1,10 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background: #e8f0fe;
+  background: #121212;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +14,8 @@ body {
 
 h1 {
   margin-bottom: 10px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
 }
 
 #game-board {
@@ -24,33 +28,58 @@ h1 {
 .hole {
   width: 100px;
   height: 100px;
-  background: #c8d6e5;
+  background: #1e1e1e;
+  border: 2px solid #333;
   border-radius: 10px;
   position: relative;
   cursor: pointer;
+  box-shadow: 0 0 10px #000;
 }
 
 .mole {
   width: 60px;
   height: 60px;
-  background: brown;
+  background: #ff6347;
   border-radius: 50%;
   position: absolute;
   top: 20px;
   left: 20px;
   display: none;
+  animation: pop 0.3s ease-in-out;
+  box-shadow: 0 0 15px #ff6347;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
 }
 
 #score {
   font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ffff;
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
-  background-color: #34a853;
-  color: white;
+  background-color: #00ffcc;
+  color: black;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 0 10px #00ffcc;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px #00ffcc;
 }
